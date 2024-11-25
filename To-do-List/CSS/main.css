@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 3%;
+    color: #e4e4e4;
+}
+
+/* Body light or darker themes */
+.standard {
+    background-image: linear-gradient(100deg, #5c5b5b, #093548);
+    color: #f0ded8;
+    transition: 0.3s linear;
+    overflow: hidden;
+}
+
+.light {
+    background-image: linear-gradient(100deg, #e8f5ff, #ffffff);
+    color: #2d2018;
+    transition: 0.3s linear;
+}
+
+.darker {
+    background-image: linear-gradient(100deg, #021b1f, #013545);
+    color: #e0e0e0;
+    transition: 0.3s linear;
+}
+
+/* New Themes */
+.sunset {
+    background-image: linear-gradient(100deg, #ff6b6b, #ff9f68);
+    color: #ffe66d;
+    transition: 0.3s linear;
+}
+
+.ocean {
+    background-image: linear-gradient(100deg, #0077b6, #90e0ef);
+    color: #caf0f8;
+    transition: 0.3s linear;
+}
+
+#header, #form, #datetime {
+    margin: 0 5rem;
+    min-height: 10vh;
+    width: 100%;
+}
+
+#header {
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3rem; /* Reduzido */
+    min-height: 25vh;
+    width: 100%;
+}
+
+/* Theme buttons div */
+.flexrow-container {
+    align-items: center;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 3%;
+}
+
+.theme-selector {
+    background: #ff6f61; /* Nova cor */
+    border: 1px solid #d1dae3;
+    border-radius: 100%;
+    height: 30px; /* Reduzido */
+    width: 30px; /* Reduzido */
+    margin: 0 8px;
+    transition: transform 150ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.theme-selector:hover {
+    box-shadow: white 0 0 8px;
+    cursor: pointer;
+}
+
+.theme-selector:active {
+    transform: scale(0.95);
+}
+
+.standard-theme {
+    background-image: linear-gradient(100deg, #5c5b5b, #093548);
+}
+
+.light-theme {
+    background-image: linear-gradient(100deg, #e8f5ff, #ffffff);
+}
+
+.darker-theme {
+    background-image: linear-gradient(100deg, #160000, #013545);
+}
+
+.sunset-theme {
+    background-image: linear-gradient(100deg, #ff6b6b, #ff9f68);
+}
+
+.ocean-theme {
+    background-image: linear-gradient(100deg, #0077b6, #90e0ef);
+}
+
+/* Animation */
+#title {
+    border-right: solid 3px rgba(0, 0, 0, 0.75);
+    white-space: pre;
+    overflow: hidden;
+    letter-spacing: 0.15rem; /* Reduzido */
+    margin-top: 40px;
+    margin-bottom: 15px;
+    max-width: 450px; /* Reduzido */
+    justify-content: center;
+    display: flex;
+    animation: animated-text 1s steps(20,end) 0.2s 1 normal both,
+        animated-cursor 750ms steps(10,end) infinite;
+}
+
+#title.darker-title {
+    animation: animated-text 1s steps(5,end) 0.2s 1 normal both, darker-animated-cursor 750ms steps(5,end) infinite;
+}
+
+/* text animation */
+@keyframes animated-text {
+    from { width: 0%; }
+    to { width: 450px; }
+}
+
+/* cursor animations */
+@keyframes animated-cursor {
+    from { border-right-color: rgba(0, 0, 0, 0.75); }
+    to { border-right-color: transparent; }
+}
+
+@keyframes darker-animated-cursor {
+    from { border-right-color: #01394c; }
+    to { border-right-color: transparent; }
+}
+
+form {
+    display: flex;
+    font-size: 1.5rem; /* Reduzido */
+    justify-content: center;
+    margin: 15px 0;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+form input {
+    padding: 8px; /* Reduzido */
+    font-size: 15px; /* Reduzido */
+    border: none;
+    outline: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    max-width: 500px;
+    transition: background-color 200ms ease-in-out;
+    width: 100%;
+}
+
+/* Input themes */
+form input.standard-input {
+    background-color: #2b2b2b;
+    color: #f1dcdc;
+}
+
+form input.light-input {
+    background-color: #c8ccd0;
+    color: #2d2018;
+}
+
+form input.light-input::placeholder {
+    color: #2d2018;
+    opacity: 0.7;
+}
+
+form input.darker-input {
+    background-color: #033f57;
+    color: #e4e4e4;
+}
+
+form input.darker-input::placeholder {
+    color: #e4e4e4;
+    opacity: 0.7;
+}
+
+form input.sunset-input {
+    background-color: #ff6b6b;
+    color: #ffe66d;
+}
+
+form input.ocean-input {
+    background-color: #0077b6;
+    color: #caf0f8;
+}
+
+form input:hover {
+    cursor: text;
+}
+
+form input.standard-input:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+form input.light-input:hover {
+    background-color: #919699;
+}
+
+form input.darker-input:hover {
+    background-color: #013141;
+}
+
+form input.sunset-input:hover {
+    background-color: #ff4747;
+}
+
+form input.ocean-input:hover {
+    background-color: #00618b;
+}
+
+button {
+    border: none;
+    outline: none;
+    transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Button themes */
+button.standard-button {
+    background-color: #f1dcdc;
+    color: #2d2018;
+}
+
+button.standard-button:hover {
+    background-color: white;
+    box-shadow: #fff8 0 0 10px;
+}
+
+button.light-button {
+    background-color: #f8f8f8;
+    color: #2d2018;
+}
+
+button.light-button:hover {
+    background-color: #f0f0f0;
+}
+
+button.darker-button {
+    background-color: #013a52;
+    color: #e0e0e0;
+}
+
+button.darker-button:hover {
+    background-color: #001f29;
+}
+
+button.sunset-button {
+    background-color: #ff6b6b;
+    color: #ffe66d;
+}
+
+button.sunset-button:hover {
+    background-color: #ff4747;
+}
+
+button.ocean-button {
+    background-color: #0077b6;
+    color: #caf0f8;
+}
+
+button.ocean-button:hover {
+    background-color: #00618b;
+}
+
+form button {
+    padding: 8px; /* Reduzido */
+    font-size: 15px; /* Reduzido */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    min-width: 90px; /* Reduzido */
+}
+
+#myUnOrdList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.todo-list {
+    min-width: 25%;
+    list-style: none;
+}
+
+.todo {
+    margin: 1rem;
+    font-size: 17px; /* Reduzido */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    border-radius: 30px;
+    transition: background-color 200ms ease-in-out;
+}
+
+/* Items themes */
+.standard-todo {
+    background-color: #303232;
+    color: #e4e4e4;
+}
+
+.light-todo {
+    background-color: #c8ccd0;
+    color: #2d2018;
+}
+
+.darker-todo {
+    background-color: #033f57;
+    color: #e0e0e0;
+}
+
+.sunset-todo {
+    background-color: #ff9f68;
+    color: #ffe66d;
+}
+
+.ocean-todo {
+    background-color: #90e0ef;
+    color: #caf0f8;
+}
+
+.todo li {
+    padding: 5px; /* Reduzido */
+    font-size: 18px; /* Reduzido */
+    flex: 1;
+    border-radius: 30px;
+    overflow-wrap: anywhere;
+}
+
+.check-btn, .delete-btn {
+    font-size: 17px; /* Reduzido */
+    cursor: pointer;
+    width: 1.8em; /* Reduzido */
+    height: 1.8em; /* Reduzido */
+    border-radius: 80%;
+    margin: 0 5px;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    transition: 0.2s;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transition: 0.5s;
+    transform: translateY(45rem) rotateZ(45deg);
+    opacity: 0;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1000px) {
+    .flexrow-container {
+        align-self: unset;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #header {
+        font-size: 1.8rem; /* Reduzido */
+    }
+
+    #title {
+        animation:
+            animated-text 3s steps(16,end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(16,end) infinite;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        max-width: 300px; /* Reduzido */
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #header {
+        font-size: 1.3rem; /* Reduzido */
+    }
+
+    #title {
+        animation:
+            animated-text 3.5s steps(16,end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(16,end) infinite;
+        max-width: 220px; /* Reduzido */
+    }
+
+    form {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    form input {
+        border-radius: 15px;
+    }
+
+    form button {
+        border-radius: 15px;
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    form > button.light-button {
+        box-shadow: 0 0 5px lightgray;
+    }
+}
