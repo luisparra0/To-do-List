@@ -26,7 +26,7 @@ Siga os passos abaixo para instalar e executar o projeto em seu ambiente local.
 1. **Clone o repositório:**
 
    ```bash
-   git clone (https://github.com/PedroNeves-git/LLPA.git)
+   git clone [(https://github.com/luisparra0/To-do-List.git)]
 Navegue até o diretório do projeto:
 
 bash
